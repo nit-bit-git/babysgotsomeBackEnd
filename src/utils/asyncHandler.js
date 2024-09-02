@@ -1,4 +1,4 @@
-const asyncHandler = (reqHandlerfn) => (req,res, next) => {
+const asyncHandler = (reqHandlerfn) => (req,res, next) => { // will automatically return , if u put {} u wud need a return statment
     Promise.resolve( reqHandlerfn(req, res, next))
             .catch((err)=> next(err))
 }

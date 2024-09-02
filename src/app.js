@@ -17,4 +17,10 @@ app.use(express.static("public")) // to store assets like pdfs or images to be a
 
 app.use(cookieParser())
 
-export { app };
+//routes
+import userRouter from "./routes/user.routes.js"
+
+//routes declaration
+app.use("/api/v1/users", userRouter) // will take us to http://localhost:8000/api/v1/users/register
+
+export { app }

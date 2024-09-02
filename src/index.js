@@ -3,6 +3,7 @@
 // import { DB_NAME } from "./constant";
 import connectDB from "./db/index.js";
 import dotenv from "dotenv";
+import {app} from "./app.js"
 
 const port = process.env.PORT || 8000
 dotenv.config({
@@ -25,8 +26,7 @@ connectDB() //promise is below to handle this async function
 
 
 //approach 1 all here approach
-// import express from "express";
-// const app = express
+
 // using IFFE
 // ;(async()=>{
 //     try{
