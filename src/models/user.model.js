@@ -39,14 +39,14 @@ const userSchema = new Schema ({
        type: String,
        required: [true, "Password is required"]
    },
-   refereshToken: {
+   refreshToken: {
        type: String
    },
 }, {timestamps: true})
 
 userSchema.pre("save", async function(next) {
     if(!this.isModified("password")) return next();
-    this.password = bcrypt.hash(this.password, 12) // 12 rounds
+    this.password = await bcrypt.hash(this.password, 12) // 12 rounds
     next()
 })
 
